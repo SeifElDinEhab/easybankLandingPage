@@ -1,0 +1,46 @@
+#options {
+  width: 100%;
+  background-color: $light-grayish-blue;
+  padding: 100px $padding-x 40px $padding-x;
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 35px;
+    color: $dark-blue;
+  }
+  p {
+    margin-bottom: 70px;
+    line-height: 1.5;
+    color: $grayish-blue;
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+
+  .features {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .feature {
+      padding: 0 10px;
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 72px;
+        margin-bottom: 50px;
+      }
+      h1 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+        font-weight: 400;
+        color: $dark-blue;
+      }
+      p {
+        color: $grayish-blue;
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}

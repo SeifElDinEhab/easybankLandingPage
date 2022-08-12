@@ -1,0 +1,63 @@
+#blog {
+  width: 100%;
+  padding: 100px $padding-x;
+  background-color: $very-light-gray;
+  h1 {
+    margin-bottom: 55px;
+    font-weight: 400;
+  }
+  .articles {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    .article {
+      width: 23%;
+      border-radius: 5px;
+      overflow: hidden;
+      background-color: $white;
+      div[class^="img-"] {
+        width: 100%;
+        aspect-ratio: 1.4;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .img-1 {
+        background-image: url(images/image-currency.jpg);
+      }
+      .img-2 {
+        background-image: url(images/image-restaurant.jpg);
+      }
+      .img-3 {
+        background-image: url(images/image-plane.jpg);
+      }
+      .img-4 {
+        background-image: url(images/image-confetti.jpg);
+      }
+      .wrapper {
+        width: 100%;
+        padding: 30px;
+        margin-top: 10px;
+        h6 {
+          color: $grayish-blue;
+          font-weight: 300;
+          margin-bottom: 15px;
+        }
+        h3 {
+          font-weight: 400;
+          margin-bottom: 15px;
+          transition: color 150ms ease-in;
+          &:hover {
+            color: $hover-lime-green;
+            cursor: pointer;
+          }
+        }
+        p {
+          color: $grayish-blue;
+          font-size: 0.8rem;
+          padding-bottom: 15px;
+        }
+      }
+    }
+  }
+}

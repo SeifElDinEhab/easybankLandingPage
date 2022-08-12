@@ -1,0 +1,491 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Public Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: hsl(0deg, 0%, 98%);
+  color: hsl(233deg, 26%, 24%);
+  overflow-x: hidden;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background-color: hsl(0deg, 0%, 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12%;
+  z-index: 10;
+}
+header .logo {
+  cursor: pointer;
+}
+header .ham-wrapper {
+  width: 45px;
+  height: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+header .ham-wrapper .hamburger {
+  height: 20px;
+  cursor: pointer;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+}
+header nav a {
+  all: unset;
+  position: relative;
+  cursor: pointer;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  color: hsl(233deg, 8%, 62%);
+  transition: all 200ms ease-in;
+}
+header nav a:hover {
+  color: hsl(233deg, 26%, 24%);
+}
+header nav a::before {
+  all: unset;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(0.375turn, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 200ms ease-in-out;
+}
+header nav a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  color: hsl(0deg, 0%, 100%);
+  text-align: center;
+  width: 170px;
+  height: 45px;
+  background: linear-gradient(0.375turn, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+  border-radius: 30px;
+  font-weight: 700;
+  opacity: 1;
+  font-size: 0.9rem;
+  transition: opacity 200ms ease-in-out;
+}
+button:hover {
+  opacity: 0.7;
+}
+
+#intro {
+  width: 100%;
+  height: 90vh;
+  background-color: hsl(0deg, 0%, 98%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: visible;
+}
+#intro .summary {
+  width: 50%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 12%;
+}
+#intro .summary h1 {
+  width: 100%;
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+#intro .summary p {
+  margin-bottom: 40px;
+  line-height: 1.5;
+  color: hsl(233deg, 8%, 62%);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+#intro .phones {
+  width: 60%;
+  height: 100vh;
+  position: relative;
+  overflow: visible;
+  background-image: url(images/bg-intro-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 120% 130%;
+  background-position: left bottom;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+#options {
+  width: 100%;
+  background-color: hsl(220deg, 16%, 96%);
+  padding: 100px 12% 40px 12%;
+}
+#options h1 {
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-bottom: 35px;
+  color: hsl(233deg, 26%, 24%);
+}
+#options p {
+  margin-bottom: 70px;
+  line-height: 1.5;
+  color: hsl(233deg, 8%, 62%);
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+#options .features {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+#options .features .feature {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+#options .features .feature img {
+  width: 72px;
+  margin-bottom: 50px;
+}
+#options .features .feature h1 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-weight: 400;
+  color: hsl(233deg, 26%, 24%);
+}
+#options .features .feature p {
+  color: hsl(233deg, 8%, 62%);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#blog {
+  width: 100%;
+  padding: 100px 12%;
+  background-color: hsl(0deg, 0%, 98%);
+}
+#blog h1 {
+  margin-bottom: 55px;
+  font-weight: 400;
+}
+#blog .articles {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+#blog .articles .article {
+  width: 23%;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: hsl(0deg, 0%, 100%);
+}
+#blog .articles .article div[class^=img-] {
+  width: 100%;
+  aspect-ratio: 1.4;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#blog .articles .article .img-1 {
+  background-image: url(images/image-currency.jpg);
+}
+#blog .articles .article .img-2 {
+  background-image: url(images/image-restaurant.jpg);
+}
+#blog .articles .article .img-3 {
+  background-image: url(images/image-plane.jpg);
+}
+#blog .articles .article .img-4 {
+  background-image: url(images/image-confetti.jpg);
+}
+#blog .articles .article .wrapper {
+  width: 100%;
+  padding: 30px;
+  margin-top: 10px;
+}
+#blog .articles .article .wrapper h6 {
+  color: hsl(233deg, 8%, 62%);
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+#blog .articles .article .wrapper h3 {
+  font-weight: 400;
+  margin-bottom: 15px;
+  transition: color 150ms ease-in;
+}
+#blog .articles .article .wrapper h3:hover {
+  color: hsl(155deg, 65%, 48%);
+  cursor: pointer;
+}
+#blog .articles .article .wrapper p {
+  color: hsl(233deg, 8%, 62%);
+  font-size: 0.8rem;
+  padding-bottom: 15px;
+}
+
+footer {
+  width: 100%;
+  background-color: hsl(233deg, 26%, 24%);
+  height: 20vh;
+  padding: 30px 12%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: hsl(0deg, 0%, 100%);
+}
+footer .first-second {
+  width: 50%;
+  height: 12vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .first-second .first-section {
+  position: relative;
+  width: 139px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 12vh;
+  margin: 0;
+}
+footer .first-second .first-section .logo {
+  margin-bottom: 20px;
+}
+footer .first-second .first-section .socials {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .first-second .first-section .socials .social-icon path {
+  transition: all 150ms ease-in;
+}
+footer .first-second .first-section .socials .social-icon svg:hover path {
+  fill: hsl(155deg, 65%, 48%);
+}
+footer .first-second .second-section {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+footer .first-second .second-section .items {
+  height: 12vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+footer .first-second .second-section .items a {
+  all: unset;
+  cursor: pointer;
+}
+footer .first-second .second-section .items a:hover {
+  color: hsl(155deg, 65%, 48%);
+}
+footer .third-section {
+  height: 12vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  font-size: 0.8rem;
+  color: hsl(233deg, 8%, 62%);
+}
+
+.attribution {
+  width: 100%;
+  padding: 0 12%;
+  background-color: hsl(233deg, 26%, 24%);
+  color: hsl(233deg, 8%, 62%);
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.attribution a {
+  all: unset;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.attribution a:hover {
+  color: hsl(155deg, 65%, 48%);
+}
+
+@media only screen and (max-width: 1000px) {
+  header {
+    padding: 0 15px;
+  }
+  #blog .articles {
+    flex-wrap: wrap;
+  }
+  #blog .articles .article {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  header {
+    padding: 0 8%;
+    position: relative;
+  }
+  header button {
+    display: none;
+  }
+  header .nav-wrapper {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    align-items: flex-start;
+    justify-content: center;
+    background: linear-gradient(0.5turn, hsl(233deg, 26%, 24%), transparent);
+    padding: 10px 8%;
+  }
+  header .nav-wrapper nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(0deg, 0%, 100%);
+    border-radius: 5px;
+    padding: 10px 10px;
+  }
+  header .nav-wrapper nav a {
+    height: 45px;
+    color: hsl(233deg, 26%, 24%);
+  }
+  header .active {
+    display: flex;
+  }
+  header .ham-wrapper {
+    display: flex;
+  }
+  #intro {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  #intro .summary {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2%;
+  }
+  #intro .summary h1 {
+    font-size: 2rem;
+  }
+  #intro .phones {
+    width: 100%;
+    height: 50vh;
+    background-image: url(images/bg-intro-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  #intro .phones img {
+    width: 100%;
+  }
+  #options {
+    text-align: center;
+    padding: 40px 2% 0 2%;
+  }
+  #options .features {
+    flex-direction: column;
+  }
+  #options .features .feature {
+    align-items: center;
+  }
+  #blog {
+    text-align: center;
+    padding: 60px 2%;
+  }
+  #blog .articles {
+    flex-direction: column;
+    align-items: center;
+  }
+  #blog .articles .article {
+    width: 80%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  #blog .articles .article div[class^=img-] {
+    width: 100%;
+    aspect-ratio: 1.4;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #blog .articles .article .wrapper {
+    padding: 10px;
+  }
+  footer {
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+  }
+  footer .first-second {
+    width: 100%;
+    flex-direction: column;
+    height: auto;
+  }
+  footer .first-second .first-section {
+    height: 10vh;
+  }
+  footer .first-second .second-section {
+    flex-direction: column;
+    height: auto;
+  }
+  footer .first-second .second-section .items {
+    width: 100%;
+    align-items: center;
+    margin: 20px 0;
+  }
+  footer .third-section {
+    width: 100%;
+    margin: 20px 0;
+    align-items: center;
+    justify-content: space-between;
+  }
+}/*# sourceMappingURL=style.css.map */

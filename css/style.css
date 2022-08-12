@@ -265,7 +265,7 @@ footer {
 }
 footer .first-second {
   width: 50%;
-  height: 12vh;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -318,7 +318,7 @@ footer .first-second .second-section .items a:hover {
   color: hsl(155deg, 65%, 48%);
 }
 footer .third-section {
-  height: 12vh;
+  height: 80px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
